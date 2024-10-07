@@ -1,0 +1,87 @@
+* {
+  /* border: 1px solid gray; */
+  font-family: monospace;
+  font-size: 20px;
+}
+
+body {
+  background-color: rgb(36, 39, 49);
+}
+
+form {
+  text-align: center;
+  padding: 10px;
+}
+select {
+  text-align: center;
+  border-radius: 10px;
+  outline: none;
+  height: 40px;
+  border: none;
+}
+
+button {
+  height: 40px;
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(255, 40, 148);
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.day-name {
+  text-align: center;
+  width: 100px;
+  color: aliceblue;
+  font-weight: 100;
+}
+
+.day-name-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  margin: 0 auto;
+  width: 750px;
+}
+
+.gallery {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 750px;
+  margin: 0 auto;
+}
+
+.day {
+  height: 100px;
+  width: 100px;
+  /* border: 1px solid gray; */
+  background-color: rgba(255, 255, 255, 0.219);
+  position: relative;
+}
+
+.day:hover {
+  cursor: pointer;
+}
+
+.not-month {
+  background-color: rgba(255, 255, 255, 0.219);
+}
+
+.not-month:hover {
+  cursor: not-allowed;
+}
+
+.img-of-the-day {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
