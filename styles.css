@@ -201,6 +201,7 @@ a {
 #close-modal {
   position: absolute;
   right: 20px;
+  color: rgba(255, 255, 255, 0.318);
 }
 
 #close-modal:hover {
