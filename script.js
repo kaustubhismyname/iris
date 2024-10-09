@@ -129,8 +129,6 @@ class App {
     const day = a.getDay();
     const numDays = this.daysInMonth(month, +year);
 
-    // console.log(day);
-
     for (let i = 0; i < 35; i++) {
       const src =
         data[year]?.[month]?.[`${i - day + 1}`]?.url || "/images/no-pic-2.jpg";
@@ -141,8 +139,6 @@ class App {
         "https://www.instagram.com/iris_iitm/";
       const photographer =
         data[year]?.[month]?.[`${i - day + 1}`]?.owner || "Iris";
-
-      console.log(photographer);
 
       if (i < day || i > day + numDays - 1) {
         gallery.insertAdjacentHTML(
@@ -199,7 +195,6 @@ class App {
 getImageData()
   .then((data) => {
     const app = new App(data);
-    console.log(data);
   })
   .catch((err) => console.log(err));
 //
