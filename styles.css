@@ -118,3 +118,102 @@ button:hover {
 .day:hover .date-overlay {
   opacity: 0;
 }
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.212);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-image {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 5px 5px 10px 5px black;
+  z-index: 20;
+}
+
+.image-details-pane {
+  width: 270px;
+  height: 450px;
+  border-radius: 0 15px 15px 0;
+  background-color: #000000ac;
+  box-shadow: 5px 5px 10px 5px black;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 20px;
+  position: relative;
+}
+
+.image-title {
+  color: white;
+  display: block;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+cite {
+  color: rgb(154, 154, 154);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.image-caption {
+  color: rgb(169, 169, 169);
+}
+
+.dm-mono-light {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.insta {
+  position: absolute;
+  bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+  /* background: linear-gradient(to right, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; */
+  color: rgba(255, 255, 255, 0.541);
+  font-weight: 100;
+}
+
+.instagram-icon {
+  display: block;
+}
+
+#close-modal {
+  position: absolute;
+  right: 20px;
+}
+
+#close-modal:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.details-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

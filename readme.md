@@ -11,26 +11,25 @@ This is a static image gallery, which displays images by date in a calendar form
 
    {
 
-   
-    "year1": {
-      "Month1": {
-        "date1": { "url": "path/to/image.jpg" }
-        "date2": { "url": "path/to/image.jpg" }
-        "date3": { "url": "path/to/image.jpg" }
-      },
-      "Month2": {
-        "date1": { "url": "path/to/image.jpg" }
-        "date2": { "url": "path/to/image.jpg" }
-        "date3": { "url": "path/to/image.jpg" }
-      }
-    },
+   "year1": {
+   "Month1": {
+   "date1": { "url": "path/to/image.jpg" }
+   "date2": { "url": "path/to/image.jpg" }
+   "date3": { "url": "path/to/image.jpg" }
+   },
+   "Month2": {
+   "date1": { "url": "path/to/image.jpg" }
+   "date2": { "url": "path/to/image.jpg" }
+   "date3": { "url": "path/to/image.jpg" }
+   }
+   },
    "year2": {
-      "Month1": {
-        "date1": { "url": "path/to/image.jpg" }
-        "date2": { "url": "path/to/image.jpg" }
-        "date3": { "url": "path/to/image.jpg" }
-        "date4": { "url": "path/to/image.jpg" }
-      }
-    }
+   "Month1": {
+   "date1": { "url": "path/to/image.jpg" }
+   "date2": { "url": "path/to/image.jpg" }
+   "date3": { "url": "path/to/image.jpg" }
+   "date4": { "url": "path/to/image.jpg" }
+   }
+   }
 
-  }
+}

@@ -5,6 +5,11 @@ const gallery = document.querySelector(".gallery");
 const yearSelector = document.querySelector("#year");
 const monthSelector = document.querySelector("#month");
 const today = new Date(Date.now());
+const closeBtn = document.querySelector("#close-modal");
+const imageDetails = document.querySelector(".image-details");
+const imageModal = document.querySelector(".image-modal");
+const bigImage = document.querySelector(".big-image");
+
 // prettier-ignore
 const months =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -44,7 +49,53 @@ class App {
       this.showGallery(monthSelector.value, yearSelector.value, this.data);
     });
 
+    gallery.addEventListener("click", this.showModal.bind(this));
+    closeBtn.addEventListener("click", this.hideModal);
     this.showGallery(monthSelector.value, yearSelector.value, this.data);
+  }
+
+  hideModal() {
+    imageModal.classList.add("hidden");
+  }
+
+  showModal(e) {
+    if (
+      !(
+        e.target.classList.contains("date-txt") ||
+        e.target.classList.contains("date-overlay")
+      ) ||
+      e.target.dataset.url == "/images/no-pic-2.jpg"
+    ) {
+      return;
+    }
+
+    imageDetails.innerHTML = "";
+
+    const url = e.target.dataset.url;
+    const title = e.target.dataset.title;
+    const caption = e.target.dataset.caption;
+    const insta = e.target.dataset.insta;
+    const date = e.target.dataset.date;
+    const photographer = e.target.dataset.photographer;
+    const images = this.data[yearSelector.value][monthSelector.value];
+
+    bigImage.src = url;
+    imageDetails.insertAdjacentHTML(
+      "afterbegin",
+      `<span class="image-title">${title}</span>
+          <cite class="photographer-name">by ${photographer}</cite>
+          <p class="image-caption dm-mono-light">${caption}</p>
+          <div class="insta">
+            <a href=${insta} target="_blank">Follow ${photographer} on 
+              <span class="instagram-icon"> 
+                <img src="/images/insta-icon.png" height="16px"> 
+                Instagram
+              </span>
+            </a>
+          </div> `
+    );
+
+    imageModal.classList.remove("hidden");
   }
 
   daysInMonth(month, year) {
@@ -78,12 +129,19 @@ class App {
     const day = a.getDay();
     const numDays = this.daysInMonth(month, +year);
 
-    console.log(day);
+    // console.log(day);
 
     for (let i = 0; i < 35; i++) {
       const src =
         data[year]?.[month]?.[`${i - day + 1}`]?.url || "/images/no-pic-2.jpg";
-      console.log(src);
+      const title = data[year]?.[month]?.[`${i - day + 1}`]?.title || "Image";
+      const caption = data[year]?.[month]?.[`${i - day + 1}`]?.caption || "---";
+      const insta =
+        data[year]?.[month]?.[`${i - day + 1}`]?.instagram ||
+        "https://www.instagram.com/iris_iitm/";
+      const photographer =
+        data[year]?.[month]?.[`${i - day + 1}`]?.owner || "Iris";
+      // console.log(src);
       if (i < day || i > day + numDays - 1) {
         gallery.insertAdjacentHTML(
           "beforeend",
@@ -93,8 +151,14 @@ class App {
         gallery.insertAdjacentHTML(
           "beforeend",
           `<div class="day" data-index='${i}' >
-            <div class='date-overlay'>
-               <span class='date-txt'>${i - day + 1}</span>
+            <div class='date-overlay' data-url=${src} data-photographer=${photographer} data-date=${
+            i - day + 1
+          } data-title=${title} data-caption=${caption} data-insta=${insta}>
+               <span class='date-txt' data-url=${src} data-photographer=${photographer} data-date=${
+            i - day + 1
+          } data-title=${title} data-caption=${caption} data-insta=${insta}>${
+            i - day + 1
+          }</span>
                ${
                  src == "/images/no-pic-2.jpg"
                    ? `<span class='no-img-txt'>No Image</span>`
@@ -130,9 +194,11 @@ class App {
   }
 }
 
-getImageData().then((data) => {
-  const app = new App(data);
-});
+getImageData()
+  .then((data) => {
+    const app = new App(data);
+  })
+  .catch((err) => console.log(err));
 //
 //
 //
