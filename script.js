@@ -141,7 +141,9 @@ class App {
         "https://www.instagram.com/iris_iitm/";
       const photographer =
         data[year]?.[month]?.[`${i - day + 1}`]?.owner || "Iris";
-      // console.log(src);
+
+      console.log(photographer);
+
       if (i < day || i > day + numDays - 1) {
         gallery.insertAdjacentHTML(
           "beforeend",
@@ -151,12 +153,12 @@ class App {
         gallery.insertAdjacentHTML(
           "beforeend",
           `<div class="day" data-index='${i}' >
-            <div class='date-overlay' data-url=${src} data-photographer=${photographer} data-date=${
+            <div class='date-overlay' data-url="${src}" data-photographer="${photographer}" data-date="${
             i - day + 1
-          } data-title=${title} data-caption=${caption} data-insta=${insta}>
-               <span class='date-txt' data-url=${src} data-photographer=${photographer} data-date=${
+          }" data-title="${title}" data-caption="${caption}" data-insta="${insta}">
+               <span class='date-txt' data-url="${src}" data-photographer="${photographer}" data-date="${
             i - day + 1
-          } data-title=${title} data-caption=${caption} data-insta=${insta}>${
+          }" data-title="${title}" data-caption="${caption}" data-insta="${insta}">${
             i - day + 1
           }</span>
                ${
@@ -197,6 +199,7 @@ class App {
 getImageData()
   .then((data) => {
     const app = new App(data);
+    console.log(data);
   })
   .catch((err) => console.log(err));
 //
