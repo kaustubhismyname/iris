@@ -1,29 +1,20 @@
 {
-  "2023": {
-    "October": {
-      "7": { "url": "/images/milky-way-3.jpg" }
-    }
-  },
   "2024": {
-    "January": {
-      "5": {
-        "url": "/images/corvid.jpg",
-        "title": "Corvid",
-        "owner": "Kaustubh Testname",
-        "caption": "Do you ever look at someone and wonder....'WHAT IS GOING ON IN THEIR MIND?'",
+    "October": {
+      "8": {
+        "url": "/images/greenmarsh.jpg",
+        "title": "Green Marsh Hawk",
+        "owner": "Kaustubh",
+        "caption": "What is life?",
         "instagram": "https://instagram.com/kaustubhismyname"
       },
-      "2": { "url": "/images/corvid.jpg" },
-      "4": { "url": "/images/corvid.jpg" },
-      "1": { "url": "/images/corvid.jpg" }
-    },
-    "September": {
-      "22": { "url": "/images/milky-way-3.jpg" }
-    }
-  },
-  "2022": {
-    "February": {
-      "3": { "url": "/images/milky-way-3.jpg" }
+      "9": {
+        "url": "/images/rainy-spider.jpg",
+        "title": "Rainy-Spider",
+        "owner": "Shivam Singh",
+        "caption": "",
+        "instagram": "https://instagram.com/shiv_a_m__singh"
+      }
     }
   }
 }

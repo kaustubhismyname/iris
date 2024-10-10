@@ -9,6 +9,7 @@ const closeBtn = document.querySelector("#close-modal");
 const imageDetails = document.querySelector(".image-details");
 const imageModal = document.querySelector(".image-modal");
 const bigImage = document.querySelector(".big-image");
+const detailsPane = document.querySelector(".image-details-pane");
 
 // prettier-ignore
 const months =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -80,6 +81,7 @@ class App {
     const images = this.data[yearSelector.value][monthSelector.value];
 
     bigImage.src = url;
+
     imageDetails.insertAdjacentHTML(
       "afterbegin",
       `<span class="image-title">${title}</span>
@@ -96,6 +98,10 @@ class App {
     );
 
     imageModal.classList.remove("hidden");
+    console.log(bigImage.getBoundingClientRect().height);
+    detailsPane.style.height = `${
+      bigImage.getBoundingClientRect().height * 0.85
+    }px`;
   }
 
   daysInMonth(month, year) {
