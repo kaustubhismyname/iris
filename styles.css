@@ -55,7 +55,8 @@ button:hover {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   width: 750px;
-  margin: 0 auto;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .day {
@@ -218,4 +219,17 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+footer {
+  /* position: absolute; */
+  /* bottom: 20px; */
+
+  font-size: 16px;
+  text-align: center;
+  /* border: 2px solid white; */
+}
+
+footer a {
+  font-size: 16px;
 }

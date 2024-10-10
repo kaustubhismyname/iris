@@ -98,7 +98,7 @@ class App {
     );
 
     imageModal.classList.remove("hidden");
-    console.log(bigImage.getBoundingClientRect().height);
+
     detailsPane.style.height = `${
       bigImage.getBoundingClientRect().height * 0.85
     }px`;
