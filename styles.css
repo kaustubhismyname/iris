@@ -8,6 +8,7 @@ body {
   background-color: rgb(36, 39, 49);
   width: 750px;
   margin: 0 auto;
+  position: relative;
 }
 
 form {
