@@ -6,6 +6,8 @@
 
 body {
   background-color: rgb(36, 39, 49);
+  width: 750px;
+  margin: 0 auto;
 }
 
 form {
@@ -231,4 +233,8 @@ footer {
 
 footer a {
   font-size: 16px;
+}
+
+li {
+  list-style-type: none;
 }
