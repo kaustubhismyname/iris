@@ -78,6 +78,7 @@ class App {
     const insta = e.target.dataset.insta;
     const date = e.target.dataset.date;
     const photographer = e.target.dataset.photographer;
+    const instaName = e.target.dataset.instaName;
     const images = this.data[yearSelector.value][monthSelector.value];
 
     bigImage.src = url;
@@ -88,7 +89,7 @@ class App {
           <cite class="photographer-name">by ${photographer}</cite>
           <p class="image-caption dm-mono-light">${caption}</p>
           <div class="insta">
-            <a href=${insta} target="_blank">Follow ${photographer} on 
+            <a href=${insta} target="_blank">Follow ${instaName} on 
               <span class="instagram-icon"> 
                 <img src="/images/insta-icon.png" height="16px"> 
                 Instagram
@@ -155,10 +156,18 @@ class App {
         gallery.insertAdjacentHTML(
           "beforeend",
           `<div class="day" data-index='${i}' >
-            <div class='date-overlay' data-url="${src}" data-photographer="${photographer}" data-date="${
+            <div class='date-overlay' data-url="${src}" data-photographer="${photographer}" data-insta-name="${
+            insta == "https://www.instagram.com/iris_iitm/"
+              ? "Iris"
+              : photographer
+          }" data-date="${
             i - day + 1
           }" data-title="${title}" data-caption="${caption}" data-insta="${insta}">
-               <span class='date-txt' data-url="${src}" data-photographer="${photographer}" data-date="${
+               <span class='date-txt' data-url="${src}" data-photographer="${photographer}" data-insta-name="${
+            insta == "https://www.instagram.com/iris_iitm/"
+              ? "Iris"
+              : photographer
+          }" data-date="${
             i - day + 1
           }" data-title="${title}" data-caption="${caption}" data-insta="${insta}">${
             i - day + 1
